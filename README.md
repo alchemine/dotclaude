@@ -12,7 +12,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `commands/convert.md` | `/convert`: ComfyUI custom node를 개발 버전과 배포 버전 사이에서 전환 |
 | `commands/local.md` | `/local`: worktree를 만들지 않고 현재 리포에서 직접 개발 |
 | `commands/debrief.md` | `/debrief`: 세션을 되짚어 배운 것과 남은 일을 메모리와 CLAUDE.md에 기록 |
-| `hooks/validate-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
+| `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
 
 ## 설치
 
