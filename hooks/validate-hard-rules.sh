@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Stop hook: 마지막 답변이 ~/.claude/CLAUDE.md 의 룰을 어기는지 기계 검사.
+# Stop hook: 마지막 답변에서 글자만 보고 찾을 수 있는 룰 위반을 검사. 지금은 em-dash 하나.
 # 위반 시 exit 2 + stderr 메시지 -> Claude Code가 모델에 피드백을 주입해 답변을 고치게 함.
 set -u
 
