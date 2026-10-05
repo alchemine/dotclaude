@@ -20,6 +20,10 @@ description: ~/.claude의 CLAUDE.md, commands, skills, hooks를 dotclaude 리포
    - `~/.claude/commands/` → `commands/`
    - `~/.claude/skills/` → `skills/` (`synced/`, `.trash/`는 제외)
    - `~/.claude/hooks/` → `hooks/`
+   - 어느 리포에서나 쓸 수 있는 파일만 복사하세요.
+   - 특정 리포나 프로젝트에서만 쓰는 파일(e.g. ComfyUI 전용)은 제외하세요.
+   - 제외 대상이 리포에 이미 있으면 지우세요.
+   - 공통인지 애매하면 멈추고 사용자에게 물으세요.
 5. `git diff --stat`으로 변경이 없으면 브랜치를 지우고 멈추세요.
 6. `README.md`의 구성 표를 실제 파일 목록과 맞추세요.
    - command의 설명은 그 파일의 `description`을 쓰세요.
