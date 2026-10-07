@@ -2,19 +2,21 @@
 description: ~/.claude의 CLAUDE.md, commands, skills, hooks를 dotclaude 리포에 덮어쓰고 PR을 merge
 ---
 
-`~/.claude`의 설정을 `~/workspace/dotclaude`에 덮어쓰고, PR을 만들어 merge하세요.
+`~/.claude`의 설정을 `dotclaude` 리포에 덮어쓰고, PR을 만들어 merge하세요.
+`dotclaude` 리포의 위치를 모르면 사용자에게 물어보세요.
 
 # 해제하는 룰
 - Workflow 4번 (질문 창으로 동의 받기)
   - 이 command의 실행을 "동작 방식"의 복사, 커밋, push, PR, merge에 대한 동의로 보세요.
-- Git workflow의 이슈 등록, 이슈 문서, 테스트 단계
-- Git branch의 릴리스 브랜치: 개발 브랜치는 `main`에서 만들고 `main`으로 PR을 올리세요.
+- Git workflow "요청 방식"의 작업 키 정하기(Jira 키, GitHub 이슈 등록)
+- Git workflow "진행"의 이슈 문서와 테스트 단계
+- Git workflow "요청 방식"의 릴리스 브랜치 질문: 릴리스 브랜치 없이 `main`으로 PR을 올리세요.
 
 # 동작 방식
 1. `dotclaude`에서 `git status`로 커밋되지 않은 변경이 있는지 확인하세요.
    - 있으면 멈추고 알리세요.
 2. `git checkout main && git pull`로 최신 상태를 받으세요.
-3. `main`에서 `feature/sync-claude-config-<YYYYMMDD>` 브랜치를 만드세요.
+3. `main`에서 `chore/${user}/sync-claude-config-<YYYYMMDD>` 브랜치를 만드세요.
 4. 아래를 덮어쓰세요. 원본에서 지워진 파일은 리포에서도 지우세요.
    - `~/.claude/CLAUDE.md` → `CLAUDE.md`
    - `~/.claude/commands/` → `commands/`
