@@ -14,7 +14,8 @@ description: ~/.claude의 CLAUDE.md, commands, skills, hooks를 dotclaude 리포
 
 # 동작 방식
 1. `dotclaude`에서 `git status`로 커밋되지 않은 변경이 있는지 확인하세요.
-   - 있으면 멈추고 알리세요.
+   - 있으면 그 파일이 `~/.claude`의 같은 파일과 내용이 같은지 확인하세요.
+   - 같으면 이어서 진행하고, 다르면 멈추고 알리세요.
 2. `git checkout main && git pull`로 최신 상태를 받으세요.
 3. `main`에서 `chore/${user}/sync-claude-config-<YYYYMMDD>` 브랜치를 만드세요.
 4. 아래를 덮어쓰세요. 원본에서 지워진 파일은 리포에서도 지우세요.
