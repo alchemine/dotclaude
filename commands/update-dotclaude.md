@@ -6,6 +6,7 @@ description: ~/.claude의 CLAUDE.md, commands, skills, hooks를 dotclaude 리포
 `dotclaude` 리포의 위치를 모르면 사용자에게 물어보세요.
 
 # 해제하는 룰
+아래 Git workflow 항목은 `~/.claude/git.md`에 있습니다.
 - Workflow 4번 (질문 창으로 동의 받기)
   - 이 command의 실행을 "동작 방식"의 복사, 커밋, push, PR, merge에 대한 동의로 보세요.
 - Git workflow "요청 방식"의 작업 키 정하기(Jira 키, GitHub 이슈 등록)
@@ -20,6 +21,7 @@ description: ~/.claude의 CLAUDE.md, commands, skills, hooks를 dotclaude 리포
 3. `main`에서 `chore/${user}/sync-claude-config-<YYYYMMDD>` 브랜치를 만드세요.
 4. 아래를 덮어쓰세요. 원본에서 지워진 파일은 리포에서도 지우세요.
    - `~/.claude/CLAUDE.md` → `CLAUDE.md`
+   - `~/.claude/git.md` → `git.md`
    - `~/.claude/commands/` → `commands/`
    - `~/.claude/skills/` → `skills/` (`synced/`, `.trash/`는 제외)
    - `~/.claude/hooks/` → `hooks/`
