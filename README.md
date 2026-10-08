@@ -16,6 +16,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `commands/reflect.md` | `/reflect`: 사용자가 지적한 문제의 원인을 되짚어 CLAUDE.md, skill, command를 고침 |
 | `commands/update-dotclaude.md` | `/update-dotclaude`: ~/.claude의 CLAUDE.md, commands, skills, hooks를 dotclaude 리포에 덮어쓰고 PR을 merge |
 | `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
+| `hooks/require-adversarial-review.sh` | 답변이 적대적 리뷰를 거치지 않았으면 다시 답하게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
 
 ## 설치
 
