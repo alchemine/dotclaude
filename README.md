@@ -19,8 +19,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `commands/discuss.md` | `/discuss`: 읽기만 허용하고 수정, 커밋, 푸시 등 일체의 변경 작업을 금지하는 토론 모드 |
 | `commands/task.md` | `/task`: worktree를 만들지 않고 현재 리포에서 Git workflow대로 작업 |
 | `commands/task-worktree.md` | `/task-worktree`: worktree를 만들어 Git workflow대로 작업 |
-| `commands/debrief.md` | `/debrief`: 세션을 되짚어 배운 것과 남은 일을 메모리와 CLAUDE.md에 기록 |
-| `commands/reflect.md` | `/reflect`: 사용자가 지적한 문제의 원인을 되짚어 CLAUDE.md, skill, command를 고침 |
+| `commands/reflect.md` | `/reflect`: 지적이나 세션을 되짚어 원인을 찾고, 규칙(CLAUDE.md, docs, command)과 메모리를 고침 |
 | `commands/merge-dotclaude.md` | `/merge-dotclaude`: ~/.claude의 내용(CLAUDE.md, docs, commands, hooks)을 dotclaude 리포에 PR로 올리고 merge |
 | `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
 | `hooks/require-adversarial-review.sh` | 답변이 적대적 리뷰를 거치지 않았으면 다시 답하게 하는 Stop hook (참고용, 등록하지 않음) |
