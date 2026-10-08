@@ -6,7 +6,7 @@ description: worktree를 만들지 않고 현재 리포에서 Git workflow대로
 
 # 동작 방식
 1. 작업 내용이 없으면 멈추고 물어보세요.
-   - 먼저 `~/.claude/git.md`를 읽으세요.
+   - 먼저 `~/.claude/docs/git/git.md`를 읽으세요.
 2. 브랜치를 바꾸기 전에 `git status`로 커밋되지 않은 변경이 있는지 확인하세요.
    - 있으면 멈추고 알리세요.
 3. 개발 브랜치는 현재 리포에서 만들고 체크아웃하세요.
