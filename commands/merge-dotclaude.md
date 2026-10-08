@@ -1,5 +1,5 @@
 ---
-description: ~/.claude의 내용(CLAUDE.md, docs, commands, skills, hooks)을 dotclaude 리포에 PR로 올리고 merge
+description: ~/.claude의 내용(CLAUDE.md, docs, commands, hooks)을 dotclaude 리포에 PR로 올리고 merge
 ---
 
 `~/.claude`의 설정을 `dotclaude` 리포에 덮어쓰고, PR을 만들어 merge하세요.
@@ -23,7 +23,6 @@ description: ~/.claude의 내용(CLAUDE.md, docs, commands, skills, hooks)을 do
    - `~/.claude/CLAUDE.md` → `CLAUDE.md`
    - `~/.claude/docs/` → `docs/`
    - `~/.claude/commands/` → `commands/`
-   - `~/.claude/skills/` → `skills/` (`synced/`, `.trash/`는 제외)
    - `~/.claude/hooks/` → `hooks/`
    - 어느 리포에서나 쓸 수 있는 파일만 복사하세요.
    - 특정 리포나 프로젝트에서만 쓰는 파일(e.g. ComfyUI 전용)은 제외하세요.
