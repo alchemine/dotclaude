@@ -16,12 +16,17 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/workflow/subagents.md` | 서브에이전트의 수와 모델, 서버 부하 호출의 동시 요청 수를 정하는 규칙 |
 | `docs/workflow/decision.md` | 비교나 추천을 할 때 평가 기준을 세우고 결론을 내는 절차 |
 | `docs/workflow/visual-check.md` | 사람이 눈으로 보는 결과물을 만들거나 고칠 때 보이는 모습을 확인하는 절차 |
+| `docs/workflow/pm.md` | `/pm`으로 PM 모드에 들어갔을 때 읽는 지침 |
+| `docs/feedbacks/feedbacks.md` | `CLAUDE.md`에 있지만 자주 놓친 항목(답변과 행동 전에 확인) |
+| `commands/auto.md` | `/auto`: PM 모드에서 동의 없이 티켓을 만들고 처리해 -auto 릴리스 브랜치에 쌓는 자동 모드 |
+| `commands/pm.md` | `/pm`: Claude가 티켓을 만들고 처리하고 보고하며 사용자는 통과 여부와 릴리스 범위만 정하는 PM 모드 |
 | `commands/discuss.md` | `/discuss`: 읽기만 허용하고 수정, 커밋, 푸시 등 일체의 변경 작업을 금지하는 토론 모드 |
 | `commands/task.md` | `/task`: worktree를 만들지 않고 현재 리포에서 Git workflow대로 작업 |
 | `commands/task-worktree.md` | `/task-worktree`: worktree를 만들어 Git workflow대로 작업 |
 | `commands/reflect.md` | `/reflect`: 지적이나 세션을 되짚어 원인을 찾고, 규칙(CLAUDE.md, docs, command)과 메모리를 고침 |
 | `commands/merge-dotclaude.md` | `/merge-dotclaude`: ~/.claude의 내용(CLAUDE.md, docs, commands, hooks)을 dotclaude 리포에 PR로 올리고 merge |
 | `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
+| `hooks/feedbacks-reminder.mjs` | `docs/feedbacks/feedbacks.md`의 확인 항목을 컨텍스트로 붙이는 UserPromptSubmit, PreToolUse hook (`settings.json`에 등록해야 동작) |
 | `hooks/require-adversarial-review.sh` | 답변이 적대적 리뷰를 거치지 않았으면 다시 답하게 하는 Stop hook (참고용, 등록하지 않음) |
 
 ## 설치
@@ -32,5 +37,5 @@ mkdir -p ~/.claude/commands ~/.claude/hooks ~/.claude/docs
 cp dotclaude/CLAUDE.md ~/.claude/
 cp -r dotclaude/docs/. ~/.claude/docs/
 cp dotclaude/commands/*.md ~/.claude/commands/
-cp dotclaude/hooks/*.sh ~/.claude/hooks/
+cp dotclaude/hooks/*.sh dotclaude/hooks/*.mjs ~/.claude/hooks/
 ```
