@@ -24,18 +24,25 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `commands/task.md` | `/task`: worktree를 만들지 않고 현재 리포에서 Git workflow대로 작업 |
 | `commands/task-worktree.md` | `/task-worktree`: worktree를 만들어 Git workflow대로 작업 |
 | `commands/reflect.md` | `/reflect`: 지적이나 세션을 되짚어 원인을 찾고, 규칙(CLAUDE.md, docs, command)과 메모리를 고침 |
-| `commands/merge-dotclaude.md` | `/merge-dotclaude`: ~/.claude의 내용(CLAUDE.md, docs, commands, hooks)을 dotclaude 리포에 PR로 올리고 merge |
+| `commands/merge-dotclaude.md` | `/merge-dotclaude`: ~/.claude 리포(dotclaude)의 변경(CLAUDE.md, docs, commands, hooks)을 PR로 올리고 merge |
+| `.gitignore` | 추적할 파일만 허용하는 목록 |
 | `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
 | `hooks/feedbacks-reminder.mjs` | `docs/feedbacks/feedbacks.md`의 확인 항목을 컨텍스트로 붙이는 UserPromptSubmit, PreToolUse hook (`settings.json`에 등록해야 동작) |
 | `hooks/require-adversarial-review.sh` | 답변이 적대적 리뷰를 거치지 않았으면 다시 답하게 하는 Stop hook (참고용, 등록하지 않음) |
 
 ## 설치
 
+`~/.claude`를 이 리포로 씁니다. `.gitignore`가 허용 목록 방식이라 `settings.json`, `projects/` 등 컴퓨터별 파일은 추적하지 않습니다.
+
 ```bash
-git clone git@github.com:alchemine/dotclaude.git
-mkdir -p ~/.claude/commands ~/.claude/hooks ~/.claude/docs
-cp dotclaude/CLAUDE.md ~/.claude/
-cp -r dotclaude/docs/. ~/.claude/docs/
-cp dotclaude/commands/*.md ~/.claude/commands/
-cp dotclaude/hooks/*.sh dotclaude/hooks/*.mjs ~/.claude/hooks/
+cd ~/.claude
+git init -b main
+git remote add origin git@github.com:alchemine/dotclaude.git
+git fetch origin
+git reset origin/main          # 작업 트리는 그대로 두고 이력만 받음
+git branch -u origin/main
+git status                     # 리포와 다른 파일 확인
+git checkout -- .              # 리포 내용으로 맞출 때만 실행
 ```
+
+hook은 `settings.json`에 직접 등록해야 동작합니다.
