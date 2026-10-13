@@ -66,6 +66,10 @@
 
 1. `[필수]` 문서 파일이나 Notion 페이지를 쓰거나 고치기 전에 `docs/documentation/documentation.md`를 읽고 따를 것.
 
+## Testing
+
+1. `[필수]` 테스트 코드를 쓰기 전에 `docs/testing/testing.md`를 읽고 따를 것.
+
 ## Shared materials
 
 1. `[금지]` 공개 자료(다른 사람이나 다른 환경에서 읽는 자료. 소스코드, `README`, 커밋 메시지, PR 등, 비공개 리포 포함)에 요청자와 대화 과정, 이 컴퓨터의 경로와 계정을 쓰지 말 것. 변경 이유와 테스트 계획은 써도 된다.
