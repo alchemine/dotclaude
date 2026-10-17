@@ -19,7 +19,11 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/workflow/decision.md` | 비교나 추천을 할 때 평가 기준을 세우고 결론을 내는 절차 |
 | `docs/workflow/visual-check.md` | 사람이 눈으로 보는 결과물을 만들거나 고칠 때 보이는 모습을 확인하는 절차 |
 | `docs/workflow/pm.md` | `/pm`으로 PM 모드에 들어갔을 때 읽는 지침 |
+| `docs/workflow/goal.md` | `/goal`로 목표를 받았을 때 묻지 않고 끝까지 진행하는 지침 |
+| `docs/experiments/experiments.md` | 코드, 프롬프트, 파라미터를 바꾸고 결과를 비교할 때 읽는 지침 |
 | `docs/feedbacks/feedbacks.md` | `CLAUDE.md`에 있지만 자주 놓친 항목(답변과 행동 전에 확인) |
+| `docs/validate/validate.md` | `/validate`로 지시사항을 검사할 때 읽는 지침(문제의 종류, 절차, 모호 패턴, 기계 검사, 사례 판정, 보고 형식) |
+| `docs/validate/cases.md` | 사례 판독에 쓰는 상황, 기대, 근거 목록 |
 | `commands/auto.md` | `/auto`: PM 모드에서 동의 없이 티켓을 만들고 처리해 -auto 릴리스 브랜치에 쌓는 자동 모드 |
 | `commands/pm.md` | `/pm`: Claude가 티켓을 만들고 처리하고 보고하며 사용자는 통과 여부와 릴리스 범위만 정하는 PM 모드 |
 | `commands/discuss.md` | `/discuss`: 읽기만 허용하고 수정, 커밋, 푸시 등 일체의 변경 작업을 금지하는 토론 모드 |
@@ -27,9 +31,12 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `commands/task-worktree.md` | `/task-worktree`: worktree를 만들어 Git workflow대로 작업 |
 | `commands/reflect.md` | `/reflect`: 지적이나 세션을 되짚어 원인을 찾고, 규칙(CLAUDE.md, docs, command)과 메모리를 고침 |
 | `commands/merge-dotclaude.md` | `/merge-dotclaude`: ~/.claude 리포(dotclaude)의 변경(CLAUDE.md, docs, commands, hooks)을 PR로 올리고 merge |
+| `commands/validate.md` | `/validate`: ~/.claude 지시사항(CLAUDE.md, docs, commands)의 모순, 모호한 표현, 깨진 참조를 고정 절차로 검사 |
 | `.gitignore` | 추적할 파일만 허용하는 목록 |
 | `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
 | `hooks/feedbacks-reminder.mjs` | `docs/feedbacks/feedbacks.md`의 확인 항목을 컨텍스트로 붙이는 UserPromptSubmit, PreToolUse hook (`settings.json`에 등록해야 동작, PreToolUse는 matcher를 `AskUserQuestion`으로) |
+| `hooks/goal-no-question.mjs` | `/goal`이 켜져 있으면 질문 창을 막는 PreToolUse hook (`settings.json`에 등록해야 동작, matcher는 `AskUserQuestion`) |
+| `scripts/validate-rules.mjs` | 지시사항의 기계 검사(참조, 파일, README 표, 번호, 중복, 용어) 스크립트. `/validate`가 실행 |
 
 ## 설치
 
