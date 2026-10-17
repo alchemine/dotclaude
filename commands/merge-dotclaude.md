@@ -21,7 +21,8 @@ Workflow 4번은 `~/.claude/CLAUDE.md`에, Git workflow 항목은 `~/.claude/doc
    - 공통인지 애매하면 질문 창으로 물으세요.
 3. `node ~/.claude/scripts/validate-rules.mjs`를 실행하고, exit code가 1이면 출력을 그대로 글로 옮겨 알리고 멈추세요.
 4. `git fetch origin`으로 `origin/main`을 받으세요.
-5. `origin/main`에서 `chore/${user}/sync-claude-config-<YYYYMMDD>` 브랜치를 만드세요(`git switch -c <브랜치> origin/main`). 작업 트리의 변경은 그대로 따라옵니다.
+5. `origin/main`에서 `chore/${user}/sync-claude-config-<YYYYMMDD>` 브랜치를 만드세요(`git switch -c <브랜치> origin/main`).
+   - 작업 트리의 변경은 그대로 따라옵니다. 같은 파일이 `origin/main`에서도 바뀌어 switch가 거부되면 `git stash push` → switch → `git stash pop`으로 옮기고, 충돌은 upstream 구조 위에 이 변경을 다시 얹는 쪽으로 풀고 3번의 검사를 다시 돌리세요.
 6. `README.md`의 구성 표를 실제 파일 목록과 맞추세요.
    - command의 설명은 그 파일의 `description`을 쓰세요.
 7. 바뀐 내용을 요약한 영어 제목으로 커밋하고 push하세요.
