@@ -13,7 +13,8 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/architecture/deployment.md` | 배포 방식, Docker, CI/CD, 헬스 체크, 환경 설정, 롤백을 정할 때 읽는 지침 |
 | `docs/documentation/documentation.md` | 문서 파일이나 Notion 페이지를 쓰거나 고칠 때 읽는 지침(캡션, 문서에 적을 말) |
 | `docs/testing/testing.md` | 이슈를 재현하거나 수정을 검증하는 테스트 코드를 쓸 때 읽는 지침(파일 구성, 시나리오 설명, 예제 구성, 대표 예제, 흔들림 측정) |
-| `docs/experiments/experiments.md` | 코드, 프롬프트, 파라미터를 바꿔 결과를 비교할 때 읽는 지침(재현, 비교, 경계 정하기, 성능) |
+| `docs/experiments/experiments.md` | 코드, 프롬프트, 파라미터를 바꿔 결과를 비교할 때 읽는 지침(재현, 비교, 경계 정하기) |
+| `docs/profile/profile.md` | 느려짐, 메모리 증가, 간헐적 멈춤 같은 성능 문제를 진단하고 고칠 때 읽는 지침(재기, 루프 갖추기, 프로브 설계, 원인 고치기, 검증과 보고) |
 | `docs/workflow/consent.md` | 파일 수정, 환경 변경, git 작업, 삭제, 외부 전송 전에 동의를 받는 절차 |
 | `docs/workflow/subagents.md` | 서브에이전트의 수와 모델, 서버 부하 호출의 동시 요청 수를 정하는 규칙 |
 | `docs/workflow/decision.md` | 비교나 추천을 할 때 평가 기준을 세우고 결론을 내는 절차 |
