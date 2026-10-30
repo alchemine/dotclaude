@@ -17,7 +17,7 @@ Workflow 4번은 `~/.claude/CLAUDE.md`에, Git workflow 항목은 `~/.claude/doc
 # 동작 방식
 1. `~/.claude`에서 `git status`로 변경을 확인하세요. 변경이 없으면 그 사실을 알리고 멈추세요.
 2. 바뀐 파일이 어느 리포에서나 쓸 수 있는지 확인하세요.
-   - 특정 리포나 프로젝트에서만 쓰는 파일(e.g. ComfyUI 전용)은 커밋하지 마세요.
+   - 특정 리포나 프로젝트에서만 쓰는 파일(e.g. 한 서비스의 서버만 띄우는 스크립트)은 커밋하지 마세요.
    - 공통인지 애매하면 질문 창으로 물으세요.
 3. `node ~/.claude/scripts/validate-rules.mjs`를 실행하고, exit code가 1이면 출력을 그대로 글로 옮겨 알리고 멈추세요.
 4. `git fetch origin`으로 `origin/main`을 받으세요.
