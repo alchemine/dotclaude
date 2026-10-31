@@ -78,7 +78,7 @@
 
 ## Documentation
 
-1. `[필수]` 문서 파일이나 Notion 페이지를 쓰거나 고치기 전에 `docs/documentation/documentation.md`를 읽고 따를 것.
+1. `[필수]` 문서 파일, Notion 페이지, 사람이 보는 화면의 글(대시보드, 차트 설명, 화면 문구)을 쓰거나 고치기 전에 `docs/documentation/documentation.md`를 읽고 따를 것.
 
 ## Testing
 
