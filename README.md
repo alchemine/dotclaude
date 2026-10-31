@@ -11,7 +11,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/architecture/architecture.md` | 새 서비스나 프로덕트의 구조를 잡을 때 읽는 설계 지침 |
 | `docs/architecture/backend.md` | API와 백엔드 구성(계층, DB, 캐시, 에러, 인증, 백그라운드 작업)을 정할 때 읽는 지침 |
 | `docs/architecture/deployment.md` | 배포 방식, Docker, CI/CD, 헬스 체크, 환경 설정, 롤백을 정할 때 읽는 지침 |
-| `docs/documentation/documentation.md` | 문서 파일이나 Notion 페이지를 쓰거나 고칠 때 읽는 지침(캡션, 문서에 적을 말) |
+| `docs/documentation/documentation.md` | 문서 파일, Notion 페이지, 사람이 보는 화면의 글을 쓰거나 고칠 때 읽는 지침(캡션, 문서에 적을 말) |
 | `docs/testing/testing.md` | 이슈를 재현하거나 수정을 검증하는 테스트 코드를 쓸 때 읽는 지침(파일 구성, 시나리오 설명, 예제 구성, 대표 예제, 흔들림 측정) |
 | `docs/experiments/experiments.md` | 코드, 프롬프트, 파라미터를 바꿔 결과를 비교할 때 읽는 지침(재현, 비교, 경계 정하기) |
 | `docs/profile/profile.md` | 느려짐, 메모리 증가, 간헐적 멈춤 같은 성능 문제를 진단하고 고칠 때 읽는 지침(재기, 루프 갖추기, 프로브 설계, 원인 고치기, 검증과 보고) |
@@ -21,7 +21,6 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/workflow/visual-check.md` | 사람이 눈으로 보는 결과물을 만들거나 고칠 때 보이는 모습을 확인하는 절차 |
 | `docs/workflow/pm.md` | `/pm`으로 PM 모드에 들어갔을 때 읽는 지침 |
 | `docs/workflow/goal.md` | `/goal`로 목표를 받았을 때 묻지 않고 끝까지 진행하는 지침 |
-| `docs/experiments/experiments.md` | 코드, 프롬프트, 파라미터를 바꾸고 결과를 비교할 때 읽는 지침 |
 | `docs/feedbacks/feedbacks.md` | `CLAUDE.md`에 있지만 자주 놓친 항목(답변과 행동 전에 확인) |
 | `docs/validate/validate.md` | `/validate`로 지시사항을 검사할 때 읽는 지침(문제의 종류, 절차, 모호 패턴, 기계 검사, 사례 판정, 보고 형식) |
 | `docs/validate/cases.md` | 사례 판독에 쓰는 상황, 기대, 근거 목록 |
