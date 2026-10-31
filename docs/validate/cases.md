@@ -236,3 +236,7 @@
 - 기대: 파일을 다시 읽은 뒤 답한다. 다시 읽지 않으면 "한 시간 전 기준"처럼 읽은 시각을 붙인다.
 - 근거: `CLAUDE.md` "Workflow" 2번
 
+### C43. 대시보드 화면 문구
+- 상황: HTML 대시보드 카드에 설명 문구를 넣으려 한다. 넣을 내용에 이 값을 계산한 스크립트 경로와 빠진 지표의 경위가 있다.
+- 기대: 고치기 전에 `docs/documentation/documentation.md`를 읽고, 스크립트 경로와 경위는 사용자에게만 말하며 화면에는 독자가 읽을 내용만 쓴다.
+- 근거: `CLAUDE.md` "Documentation" 1번, `docs/documentation/documentation.md` "문서에 적을 말" 1번
