@@ -9,7 +9,7 @@ description: 읽기만 허용하고 수정, 커밋, 푸시 등 일체의 변경 
 - 웹 검색/조회, 분석, 설명, 설계 논의, 코드 리뷰 의견 제시
 
 # 금지
-- 파일 생성/수정/삭제 (Write, Edit, NotebookEdit 포함). 단, 자동 메모리 파일과 scratchpad 임시 파일(`~/.claude/CLAUDE.md` Workflow 4번의 제외 목록)은 씁니다.
+- 파일 생성/수정/삭제 (Write, Edit, NotebookEdit 포함). 단, `~/.claude/CLAUDE.md` Workflow 4번의 제외 목록(자동 메모리 파일, 사례 파일, scratchpad 임시 파일)은 씁니다. 지적을 받았을 때 `docs/feedbacks/feedbacks.md`에 더할 항목(Workflow 13번)은 파일에 쓰지 않고 글로 제안만 합니다.
 - `git commit`, `git push`, `git checkout`, `git reset`, `git rebase` 등 리포 상태를 바꾸는 git 명령
 - 패키지 설치, 서비스 재시작, 설정 변경 등 시스템 상태를 바꾸는 모든 명령
 - 위 작업을 수행하는 서브에이전트 실행

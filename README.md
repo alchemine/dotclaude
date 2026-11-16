@@ -22,6 +22,8 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/workflow/pm.md` | `/pm`으로 PM 모드에 들어갔을 때 읽는 지침 |
 | `docs/workflow/goal.md` | `/goal`로 목표를 받았을 때 묻지 않고 끝까지 진행하는 지침 |
 | `docs/feedbacks/feedbacks.md` | `CLAUDE.md`에 있지만 자주 놓친 항목(답변과 행동 전에 확인) |
+| `docs/principles/principles.md` | 여러 방법 중 하나를 고를 때 따르는 선택 기준(원칙의 형식, 사례 기록, 원칙 갱신, 원칙) |
+| `docs/principles/cases/` | 사용자가 선택을 바로잡은 사례(상황, rejected, chosen). 파일마다 사례 하나 |
 | `docs/validate/validate.md` | `/validate`로 지시사항을 검사할 때 읽는 지침(문제의 종류, 절차, 모호 패턴, 기계 검사, 사례 판정, 보고 형식) |
 | `docs/validate/cases.md` | 사례 판독에 쓰는 상황, 기대, 근거 목록 |
 | `commands/auto.md` | `/auto`: PM 모드에서 동의 없이 티켓을 만들고 처리해 -auto 릴리스 브랜치에 쌓는 자동 모드 |

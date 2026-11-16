@@ -20,6 +20,9 @@ const README_DIRS = ['docs', 'commands', 'hooks', 'scripts']
 const DUP_EXCLUDE = new Set([README, 'docs/feedbacks/feedbacks.md', CASES])
 // 리포 밖의 파일 이름은 존재 검사(R2)에서 뺀다.
 const FILE_SKIP = new Set(['MEMORY.md'])
+// 사례 파일은 규칙이 아니라 기록이라 규칙 검사에서 빼고, README 표에는 폴더 한 행으로 둔다.
+const EXAMPLES_DIR = 'docs/principles/cases/'
+const isExample = (p) => relative(root, p).startsWith(EXAMPLES_DIR)
 // 용어: [표준 표기, 변형을 찾는 정규식]. 코드와 따옴표 안은 보지 않는다.
 const TERMS = [
   ['merge', /(?<![가-힣])머지/g],
@@ -86,7 +89,7 @@ function listFiles(dir, pred) {
 
 const ruleFiles = [
   join(root, CLAUDE_MD),
-  ...listFiles(join(root, 'docs'), (p) => p.endsWith('.md')),
+  ...listFiles(join(root, 'docs'), (p) => p.endsWith('.md') && !isExample(p)),
   ...listFiles(join(root, 'commands'), (p) => p.endsWith('.md')),
 ].filter(existsSync)
 
@@ -254,7 +257,7 @@ if (existsSync(readmePath)) {
     if (m) readmeRows.set(m[1], m[2])
   }
   const actual = new Set([CLAUDE_MD, '.gitignore'])
-  for (const dir of README_DIRS) for (const p of listFiles(join(root, dir), () => true)) actual.add(relative(root, p))
+  for (const dir of README_DIRS) for (const p of listFiles(join(root, dir), () => true)) actual.add(isExample(p) ? EXAMPLES_DIR : relative(root, p))
   for (const p of actual) if (!readmeRows.has(p)) add('R3', README, 0, `${p}의 행이 없다`)
   for (const p of readmeRows.keys()) if (!actual.has(p)) add('R3', README, 0, `${p}은 표에 있지만 파일이 없다`)
   for (const d of docs.filter((x) => x.rel.startsWith('commands/'))) {
