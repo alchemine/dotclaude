@@ -38,6 +38,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `hooks/validate-hard-rules.sh` | 마지막 답변에 em-dash가 있으면 고치게 하는 Stop hook (`settings.json`의 `hooks.Stop`에 등록해야 동작) |
 | `hooks/feedbacks-reminder.mjs` | `docs/feedbacks/feedbacks.md`의 확인 항목을 컨텍스트로 붙이는 UserPromptSubmit, PreToolUse hook (`settings.json`에 등록해야 동작, PreToolUse는 matcher를 `AskUserQuestion`으로) |
 | `hooks/goal-no-question.mjs` | `/goal`이 켜져 있으면 질문 창을 막는 PreToolUse hook (`settings.json`에 등록해야 동작, matcher는 `AskUserQuestion`) |
+| `hooks/bash-background.mjs` | 백그라운드로 실행하지 않은 Bash 호출을 막는 PreToolUse hook (`settings.json`에 등록해야 동작, matcher는 `Bash`) |
 | `hooks/notify.sh` | 세션 타이틀을 제목에 넣어 macOS 알림을 띄우는 Stop, Notification hook (`settings.json`에 등록해야 동작) |
 | `scripts/validate-rules.mjs` | 지시사항의 기계 검사(참조, 파일, README 표, 번호, 중복, 용어) 스크립트. `/validate`가 실행 |
 
