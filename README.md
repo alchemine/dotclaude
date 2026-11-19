@@ -16,7 +16,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `docs/experiments/experiments.md` | 코드, 프롬프트, 파라미터를 바꿔 결과를 비교할 때 읽는 지침(재현, 비교, 경계 정하기) |
 | `docs/profile/profile.md` | 느려짐, 메모리 증가, 간헐적 멈춤 같은 성능 문제를 진단하고 고칠 때 읽는 지침(재기, 루프 갖추기, 프로브 설계, 원인 고치기, 검증과 보고) |
 | `docs/workflow/consent.md` | 파일 수정, 환경 변경, git 작업, 삭제, 외부 전송 전에 동의를 받는 절차 |
-| `docs/workflow/subagents.md` | 서브에이전트의 수와 모델, 서버 부하 호출의 동시 요청 수를 정하는 규칙 |
+| `docs/workflow/subagents.md` | 서브에이전트의 수와 모델, 서버 부하 호출의 동시 요청 수, 부하 배치의 안정 범위와 감시를 정하는 규칙 |
 | `docs/workflow/decision.md` | 비교나 추천을 할 때 평가 기준을 세우고 결론을 내는 절차 |
 | `docs/workflow/visual-check.md` | 사람이 눈으로 보는 결과물을 만들거나 고칠 때 보이는 모습을 확인하는 절차 |
 | `docs/workflow/pm.md` | `/pm`으로 PM 모드에 들어갔을 때 읽는 지침 |
@@ -39,7 +39,7 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `hooks/feedbacks-reminder.mjs` | `docs/feedbacks/feedbacks.md`의 확인 항목을 컨텍스트로 붙이는 UserPromptSubmit, PreToolUse hook (`settings.json`에 등록해야 동작, PreToolUse는 matcher를 `AskUserQuestion`으로) |
 | `hooks/goal-no-question.mjs` | `/goal`이 켜져 있으면 질문 창을 막는 PreToolUse hook (`settings.json`에 등록해야 동작, matcher는 `AskUserQuestion`) |
 | `hooks/bash-background.mjs` | 백그라운드로 실행하지 않은 Bash 호출을 막는 PreToolUse hook (`settings.json`에 등록해야 동작, matcher는 `Bash`) |
-| `hooks/notify.sh` | 세션 타이틀을 제목에 넣어 macOS 알림을 띄우는 Stop, Notification hook (`settings.json`에 등록해야 동작) |
+| `hooks/notify.sh` | 세션 타이틀을 제목에 넣어 macOS 알림을 띄우는 Stop, Notification hook. 알림을 누르면 그 세션의 VS Code 창을 열고, 지금 보는 창이 그 세션이면 알리지 않음 (`settings.json`에 등록해야 동작) |
 | `scripts/validate-rules.mjs` | 지시사항의 기계 검사(참조, 파일, README 표, 번호, 중복, 용어) 스크립트. `/validate`가 실행 |
 
 ## 설치
