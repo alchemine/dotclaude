@@ -29,6 +29,8 @@ Claude Code의 전역 설정(`~/.claude`)을 보관하는 저장소입니다.
 | `commands/auto.md` | `/auto`: PM 모드에서 동의 없이 티켓을 만들고 처리해 -auto 릴리스 브랜치에 쌓는 자동 모드 |
 | `commands/pm.md` | `/pm`: Claude가 티켓을 만들고 처리하고 보고하며 사용자는 통과 여부와 릴리스 범위만 정하는 PM 모드 |
 | `commands/discuss.md` | `/discuss`: 읽기만 허용하고 수정, 커밋, 푸시 등 일체의 변경 작업을 금지하는 토론 모드 |
+| `commands/short.md` | `/short`: 답변을 한두 문장으로 줄이는 짧은 답변 모드 |
+| `commands/slang.md` | `/slang`: 욕 대신 쓰는 강한 불만 표시. 사용자가 이 정도로 화났다는 것을 알리고 실수를 바로잡음 |
 | `commands/task.md` | `/task`: worktree를 만들지 않고 현재 리포에서 Git workflow대로 작업 |
 | `commands/task-worktree.md` | `/task-worktree`: worktree를 만들어 Git workflow대로 작업 |
 | `commands/reflect.md` | `/reflect`: 지적이나 세션을 되짚어 원인을 찾고, 규칙(CLAUDE.md, docs, command)과 메모리를 고침 |
