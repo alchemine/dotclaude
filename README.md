@@ -61,3 +61,50 @@ git checkout -- .              # 리포 내용으로 맞출 때만 실행
 ```
 
 hook은 `settings.json`에 직접 등록해야 동작합니다.
+
+### 완료 알림 (`hooks/notify.sh`)
+
+턴이 끝나면 macOS 알림을 띄우고, 알림을 누르면 그 세션의 VS Code 창으로 갑니다.
+
+1. `settings.json`의 `hooks.Stop`에 등록합니다.
+
+   ```json
+   {
+     "type": "command",
+     "command": "NOTIFY_SKIP_IF_PENDING=1 bash ~/.claude/hooks/notify.sh \"작업 완료\""
+   }
+   ```
+
+   `NOTIFY_SKIP_IF_PENDING=1`이면 백그라운드 작업이 남아 있을 때는 알리지 않습니다.
+
+2. `terminal-notifier`를 설치합니다. 없으면 기본 알림(`osascript`)으로 뜨는데, 이 알림을 누르면 VS Code 대신 스크립트 편집기가 열립니다.
+
+   ```bash
+   brew install terminal-notifier
+   ```
+
+3. 알림 권한을 켭니다. 처음 설치하면 권한이 꺼진 채로 기록되어 알림이 뜨지 않습니다.
+   1. `terminal-notifier -message test`를 한 번 실행합니다.
+   2. 시스템 설정 > 알림 > 응용 프로그램 알림 목록에서 `terminal-notifier`를 열고 "알림 허용"을 켭니다.
+   3. 목록에 없으면 `tccutil reset UserNotification fr.julienxx.oss.terminal-notifier`를 실행한 뒤 1번부터 다시 합니다.
+
+4. (선택) 알림 아이콘을 VS Code로 바꿉니다. 알림 아이콘은 알림을 보낸 앱의 아이콘을 따르므로, VS Code 아이콘을 단 사본을 만듭니다. `notify.sh`는 이 사본이 있으면 사본을 씁니다.
+
+   ```bash
+   DST=~/Applications/claude-notifier.app
+   mkdir -p ~/Applications && cp -R /opt/homebrew/opt/terminal-notifier/terminal-notifier.app "$DST"
+   cp "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns" "$DST/Contents/Resources/Terminal.icns"
+   /usr/libexec/PlistBuddy -c 'Set :CFBundleIdentifier fr.julienxx.oss.terminal-notifier.vscode' "$DST/Contents/Info.plist"
+   codesign --force --deep -s - "$DST"
+   "$DST/Contents/MacOS/terminal-notifier" -message test
+   ```
+
+   사본은 별도 앱이라 3번의 알림 권한을 사본(`claude-notifier`)에도 한 번 켜야 합니다.
+
+5. 확인합니다. 다른 앱 창을 띄워 둔 상태에서 아래를 실행해 알림이 뜨고, 누르면 VS Code 창이 열리면 됩니다.
+
+   ```bash
+   echo "{\"cwd\":\"$PWD\"}" | bash ~/.claude/hooks/notify.sh "테스트"
+   ```
+
+   지금 보고 있는 VS Code 창이 그 폴더면 알림이 뜨지 않습니다.

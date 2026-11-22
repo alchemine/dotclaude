@@ -112,7 +112,9 @@ PY3
 fi
 
 code_cli="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-notifier=$(command -v terminal-notifier || ls /opt/homebrew/bin/terminal-notifier /usr/local/bin/terminal-notifier 2>/dev/null | head -1)
+# VS Code 아이콘을 단 사본(README "완료 알림" 참고)이 있으면 그걸 쓴다.
+notifier="$HOME/Applications/claude-notifier.app/Contents/MacOS/terminal-notifier"
+[ -x "$notifier" ] || notifier=$(command -v terminal-notifier || ls /opt/homebrew/bin/terminal-notifier /usr/local/bin/terminal-notifier 2>/dev/null | head -1)
 if [ -n "$notifier" ] && [ -x "$code_cli" ]; then
   "$notifier" -title "$header" -message "$msg" -sound Glass \
     -execute "$(printf '%q %q' "$code_cli" "$cwd")" >/dev/null 2>&1
